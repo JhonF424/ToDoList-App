@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title> ToDo App</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head> 
+<body>
+    <div class="container-fluid">
+      <div class="container-sm">
+        <form th:object="${tarea}" th:action="@{/save}" method="post">
+          <div class="mb-3">
+            <input type="hidden" th:field="*{id}">
+            <input type="text" th:field="*{task}" class="form-control" id="task" autocomplete="off">
+            <input type="submit" class="btn btn-info" value="Add Task">
+          </div>
+        </form>
+      </div>
+    </div>
+
+<div class="container-sm">
+    <table class="table">
+  <tbody>
+    <tr class="table-dark" th:each="tk:${tareas}">
+      <th scope="row" th:text="${tk.task}"></th>
+      <td> <a class="btn-info btn-sm" th:href="@{/eliminar/} + ${tk.id}" th:text="'Delete'"></a> </td> 
+    </tr>
+  </tbody>
+</table>        
+</div>
+</body>
+</html>

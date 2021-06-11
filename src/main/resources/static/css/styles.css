@@ -1,0 +1,26 @@
+body{
+    background-color: #011c40;
+}
+
+.container-fluid {
+    height: 250px;
+    background-color: #023e73;
+  }
+
+  .container-fluid .container-sm{
+      padding-top: 60px;
+  }
+
+  .container-fluid .container-sm .btn{
+      margin-left: 47%;
+      margin-top: 4%;
+  }
+
+  .container-sm{
+      padding-top: 2%;
+  }
+
+  .btn-info{
+      margin-left: 85%;
+  }
+
